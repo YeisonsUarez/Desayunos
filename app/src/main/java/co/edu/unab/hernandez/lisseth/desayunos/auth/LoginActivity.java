@@ -1,4 +1,4 @@
-package co.edu.unab.hernandez.lisseth.desayunos;
+package co.edu.unab.hernandez.lisseth.desayunos.auth;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,6 +23,9 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import co.edu.unab.hernandez.lisseth.desayunos.pagesAdmin.HomeActivity;
+import co.edu.unab.hernandez.lisseth.desayunos.MainActivity;
+import co.edu.unab.hernandez.lisseth.desayunos.R;
 import co.edu.unab.hernandez.lisseth.desayunos.models.UsuarioEmpres;
 
 public class LoginActivity extends AppCompatActivity {
@@ -116,7 +119,7 @@ public class LoginActivity extends AppCompatActivity {
                             if (document.exists()) {
                                 Log.d("GetUserSata", "DocumentSnapshot data: " + document.getData());
                                 usuarioEmpres =document.toObject(UsuarioEmpres.class);
-                                Intent i =new Intent(LoginActivity.this,HomeActivity.class);
+                                Intent i =new Intent(LoginActivity.this, HomeActivity.class);
                                 i.putExtra("user",usuarioEmpres);
                                 startActivity(i);
 

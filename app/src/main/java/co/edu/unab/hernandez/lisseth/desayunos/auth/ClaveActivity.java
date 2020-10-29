@@ -1,4 +1,4 @@
-package co.edu.unab.hernandez.lisseth.desayunos;
+package co.edu.unab.hernandez.lisseth.desayunos.auth;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +17,8 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+
+import co.edu.unab.hernandez.lisseth.desayunos.R;
 
 public class ClaveActivity extends AppCompatActivity {
 

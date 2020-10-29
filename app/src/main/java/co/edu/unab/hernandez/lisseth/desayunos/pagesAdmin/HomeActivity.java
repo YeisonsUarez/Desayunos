@@ -1,4 +1,4 @@
-package co.edu.unab.hernandez.lisseth.desayunos;
+package co.edu.unab.hernandez.lisseth.desayunos.pagesAdmin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.UserHandle;
 import android.widget.TextView;
 
+import co.edu.unab.hernandez.lisseth.desayunos.R;
 import co.edu.unab.hernandez.lisseth.desayunos.models.UsuarioEmpres;
 
 public class HomeActivity extends AppCompatActivity {

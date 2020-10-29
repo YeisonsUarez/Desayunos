@@ -1,11 +1,10 @@
-package co.edu.unab.hernandez.lisseth.desayunos;
+package co.edu.unab.hernandez.lisseth.desayunos.auth;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.UserHandle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -23,6 +22,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.SetOptions;
 
+import co.edu.unab.hernandez.lisseth.desayunos.MainActivity;
+import co.edu.unab.hernandez.lisseth.desayunos.R;
 import co.edu.unab.hernandez.lisseth.desayunos.models.UsuarioEmpres;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -114,7 +115,7 @@ public class RegisterActivity extends AppCompatActivity {
                             edit_password.setText("");
                             edit_direccion.setText("");
                             edit_descripcion.setText("");
-                            startActivity(new Intent(RegisterActivity.this,LoginActivity.class));
+                            startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w("Fail register", "createUserWithEmail:failure", task.getException());
