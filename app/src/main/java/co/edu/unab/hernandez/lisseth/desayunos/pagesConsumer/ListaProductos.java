@@ -2,6 +2,7 @@ package co.edu.unab.hernandez.lisseth.desayunos.pagesConsumer;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.LinearSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
@@ -27,9 +28,7 @@ public class ListaProductos extends AppCompatActivity {
         setContentView(R.layout.activity_lista_productos);
         setTitle("Desayunos");
         lista_productos= findViewById(R.id.lista_productos);
-        lista_productos.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL, false));
-        DividerItemDecoration mDividerItemDecoration = new DividerItemDecoration(this, LinearLayoutManager.HORIZONTAL);
-        lista_productos.addItemDecoration(mDividerItemDecoration);
+        lista_productos.setLayoutManager(new LinearLayoutManager(this));
         cargarDatos();
         lista_productos.setAdapter(new AdaptadorDesayunos(productos, new AdaptadorDesayunos.onItemClickListener() {
             @Override

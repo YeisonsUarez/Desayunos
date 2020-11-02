@@ -30,7 +30,6 @@ public class AdaptadorDesayunos extends RecyclerView.Adapter {
         public ImageView foto;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            detalle= itemView.findViewById(R.id.item_detalle_producto);
             empresa= itemView.findViewById(R.id.nombre_empresa);
             foto= itemView.findViewById(R.id.item_imagen_producto);
             nombre= itemView.findViewById(R.id.item_nombre_producto);
@@ -50,7 +49,6 @@ public class AdaptadorDesayunos extends RecyclerView.Adapter {
         ViewHolder viewHolder =(ViewHolder)holder;
         final Producto producto= productoArrayList.get(position);
         viewHolder.nombre.setText(producto.getNombre());
-        viewHolder.detalle.setText(producto.getDetalle());
         viewHolder.empresa.setText(producto.getIdEmpresa());
         viewHolder.precio.setText(producto.getValor());
         Glide.with(viewHolder.itemView.getContext()).load(producto.getUrlImage()).into(viewHolder.foto);

@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".pagesConsumer.ListaProductos"></activity>
+        <activity android:name=".pagesConsumer.DetalleProducto"></activity>
+        <activity android:name=".pagesConsumer.ListaProductos" />
         <activity android:name=".auth.ClaveActivity" />
         <activity android:name=".pagesAdmin.HomeActivity" />
         <activity android:name=".auth.RegisterActivity" />
