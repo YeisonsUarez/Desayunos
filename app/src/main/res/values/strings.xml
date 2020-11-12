@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">Desayunos</string>
+    <string name="tv_titulo_main">¿Qué deseas hacer hoy?</string>
+    <string name="btn_login_main">Iniciar como empresa</string>
+    <string name="btn_ver_desayunos_main">Ver desayunos</string>
+    <string name="tv_titulo_login">Iniciar Sesión</string>
+    <string name="tv_texto_login">Para iniciar sesión debes verificar tu correo electronico, para esto da clic en el enlace que te llegó al correo electronico.</string>
+    <string name="et_correo_login">Correo</string>
+    <string name="et_login_contrasena">Contraseña</string>
+    <string name="tv_login_olvido">Olvidé mi contraseña</string>
+    <string name="btn_login_login">Iniciar Sesión</string>
+    <string name="btn_registro_login">Registrarme</string>
+    <string name="tv_titulo_registro">Registro</string>
+    <string name="tv_desc_registro">Agrega una foto dando clic en la imagen</string>
+    <string name="et_nombre_registro">Nombre</string>
+    <string name="et_correo_registro">Correo</string>
+    <string name="et_telefono_registro">Número de teléfono</string>
+    <string name="et_direccion_registro">Dirección</string>
+    <string name="et_descripcion_registro">Descripción</string>
+    <string name="et_pass_registro">Contraseña</string>
+    <string name="btn_registro_registro">Registrarme</string>
+    <string name="tv_titulo_clave">Restablecer contraseña</string>
+    <string name="tv_desc_clave">Cuando hagas clic en enviar, te llegará un mensaje para restablecer tu contraseña.</string>
+    <string name="et_correo_clave">Correo</string>
 </resources>

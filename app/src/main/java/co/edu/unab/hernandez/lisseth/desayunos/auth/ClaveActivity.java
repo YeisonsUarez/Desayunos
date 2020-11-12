@@ -1,9 +1,11 @@
 package co.edu.unab.hernandez.lisseth.desayunos.auth;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -31,7 +33,7 @@ public class ClaveActivity extends AppCompatActivity {
         setContentView(R.layout.activity_clave);
         atras= findViewById(R.id.atras_contrasena);
         enviar= findViewById(R.id.enviar_contrasena);
-        email= findViewById(R.id.email_contrasena);
+        email= findViewById(R.id.et_correo_clave);
         email.addTextChangedListener(loginTextWatcher);
         atras.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,10 +69,17 @@ public class ClaveActivity extends AppCompatActivity {
         @Override
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
         }
+        @RequiresApi(api = Build.VERSION_CODES.M)
         @Override
         public void onTextChanged(CharSequence s, int start, int before, int count) {
 
-            enviar.setEnabled(!email.getText().toString().isEmpty());
+            if(!email.getText().toString().isEmpty()){
+                enviar.setEnabled(true);
+                enviar.setTextColor(getColor(R.color.btn_enabled));
+            }else{
+                enviar.setEnabled(false);
+                enviar.setTextColor(getColor(R.color.btn_disabled));
+            }
         }
         @Override
         public void afterTextChanged(Editable s) {

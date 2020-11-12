@@ -1,9 +1,11 @@
 package co.edu.unab.hernandez.lisseth.desayunos.auth;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -24,14 +26,14 @@ import com.google.firebase.firestore.SetOptions;
 
 import co.edu.unab.hernandez.lisseth.desayunos.MainActivity;
 import co.edu.unab.hernandez.lisseth.desayunos.R;
-import co.edu.unab.hernandez.lisseth.desayunos.models.UsuarioEmpres;
+import co.edu.unab.hernandez.lisseth.desayunos.models.UsuarioEmpresa;
 
 public class RegisterActivity extends AppCompatActivity {
 
     private EditText edit_nombre, edit_correo,edit_telefono,edit_direccion,edit_descripcion,edit_password;
     private ImageButton btn_foto, btn_atras;
     private Button btn_registrar;
-    private UsuarioEmpres user;
+    private UsuarioEmpresa user;
     private FirebaseAuth mAuth;
     private FirebaseFirestore db ;
     FirebaseUser userFirebase;
@@ -45,15 +47,15 @@ public class RegisterActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mAuth.setLanguageCode("es");
         db = FirebaseFirestore.getInstance();
-        user= new UsuarioEmpres();
-        edit_nombre= findViewById(R.id.edit_nombre);
-        edit_correo=findViewById(R.id.edit_email);
-        edit_telefono= findViewById(R.id.edit_telefono);
-        edit_descripcion= findViewById(R.id.edit_descripcion);
-        edit_direccion= findViewById(R.id.edit_direccion);
-        edit_password= findViewById(R.id.edit_password);
+        user= new UsuarioEmpresa();
+        edit_nombre= findViewById(R.id.et_nombre_registro);
+        edit_correo=findViewById(R.id.et_correo_registro);
+        edit_telefono= findViewById(R.id.et_telefono_registro);
+        edit_descripcion= findViewById(R.id.et_descripcion_registro);
+        edit_direccion= findViewById(R.id.et_direccion_registro);
+        edit_password= findViewById(R.id.et_pass_registro);
         btn_atras= findViewById(R.id.btn_atras);
-        btn_foto= findViewById(R.id.btn_select_photo);
+        btn_foto= findViewById(R.id.btn_select_photo_registro);
         btn_registrar = findViewById(R.id.btn_registrar);
         edit_password.addTextChangedListener(loginTextWatcher);
         edit_nombre.addTextChangedListener(loginTextWatcher);
@@ -80,6 +82,7 @@ public class RegisterActivity extends AppCompatActivity {
         @Override
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
         }
+        @RequiresApi(api = Build.VERSION_CODES.M)
         @Override
         public void onTextChanged(CharSequence s, int start, int before, int count) {
             user.setNombre(edit_nombre.getText().toString());
@@ -88,7 +91,13 @@ public class RegisterActivity extends AppCompatActivity {
             user.setDireccion(edit_direccion.getText().toString());
             user.setTelefono(edit_telefono.getText().toString());
             user.setContrasena(edit_password.getText().toString());
-            btn_registrar.setEnabled(!user.getCorreo().isEmpty()&&!user.getNombre().isEmpty()&&!user.getContrasena().isEmpty()&&!user.getDireccion().isEmpty()&&!user.getTelefono().isEmpty());
+            if(!user.getCorreo().isEmpty()&&!user.getNombre().isEmpty()&&!user.getContrasena().isEmpty()&&!user.getDireccion().isEmpty()&&!user.getTelefono().isEmpty()){
+                btn_registrar.setEnabled(true);
+                btn_registrar.setTextColor(getColor(R.color.btn_enabled));
+            }else{
+                btn_registrar.setEnabled(false);
+                btn_registrar.setTextColor(getColor(R.color.btn_disabled));}
+
         }
         @Override
         public void afterTextChanged(Editable s) {
@@ -105,7 +114,7 @@ public class RegisterActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d("Register", "createUserWithEmail:success");
                             userFirebase = mAuth.getCurrentUser();
-                            user.setIduser(userFirebase.getUid());
+                            user.setIdUsuario(userFirebase.getUid());
                             userFirebase.sendEmailVerification();
 
                             Toast.makeText(RegisterActivity.this, saveDataUser()?"Datos de usuario almacenados":"Fallo al intentar guardar datos de Usuario.",

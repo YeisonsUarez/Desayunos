@@ -2,10 +2,10 @@ package co.edu.unab.hernandez.lisseth.desayunos.models;
 
 import java.io.Serializable;
 
-public class UsuarioEmpres implements Serializable {
-    private  String iduser, nombre, url_foto, descripcion,telefono, correo, contrasena, direccion, latitud, longitud;
+public class UsuarioEmpresa implements Serializable {
+    private  String idUsuario, nombre, urlFoto, descripcion,telefono, correo, contrasena, direccion, latitud, longitud;
 
-    public UsuarioEmpres() {
+    public UsuarioEmpresa() {
     }
 
     public String getContrasena() {
@@ -16,12 +16,12 @@ public class UsuarioEmpres implements Serializable {
         this.contrasena = contrasena;
     }
 
-    public String getIduser() {
-        return iduser;
+    public String getIdUsuario() {
+        return idUsuario;
     }
 
-    public void setIduser(String iduser) {
-        this.iduser = iduser;
+    public void setIdUsuario(String idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
     public String getNombre() {
@@ -32,12 +32,12 @@ public class UsuarioEmpres implements Serializable {
         this.nombre = nombre;
     }
 
-    public String getUrl_foto() {
-        return url_foto;
+    public String getUrlFoto() {
+        return urlFoto;
     }
 
-    public void setUrl_foto(String url_foto) {
-        this.url_foto = url_foto;
+    public void setUrlFoto(String urlFoto) {
+        this.urlFoto = urlFoto;
     }
 
     public String getDescripcion() {

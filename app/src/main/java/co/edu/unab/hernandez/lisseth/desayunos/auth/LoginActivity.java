@@ -1,9 +1,11 @@
 package co.edu.unab.hernandez.lisseth.desayunos.auth;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -26,29 +28,31 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import co.edu.unab.hernandez.lisseth.desayunos.pagesAdmin.HomeActivity;
 import co.edu.unab.hernandez.lisseth.desayunos.MainActivity;
 import co.edu.unab.hernandez.lisseth.desayunos.R;
-import co.edu.unab.hernandez.lisseth.desayunos.models.UsuarioEmpres;
+import co.edu.unab.hernandez.lisseth.desayunos.models.UsuarioEmpresa;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText email, contrasena;
     private ImageButton atras;
     private Button login,  olvide_contraseña, registro;
     private FirebaseAuth mAuth;
-    private UsuarioEmpres usuarioEmpres;
+    private UsuarioEmpresa usuarioEmpresa;
     private FirebaseFirestore db ;
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         db = FirebaseFirestore.getInstance();
         mAuth = FirebaseAuth.getInstance();
-        email= findViewById(R.id.login_email);
-        contrasena = findViewById(R.id.login_pass);
-        login= findViewById(R.id.login_login);
-        atras= findViewById(R.id.login_atras);
-        olvide_contraseña= findViewById(R.id.login_olvido);
-        registro= findViewById(R.id.login_registro);
+        email= findViewById(R.id.et_correo_login);
+        contrasena = findViewById(R.id.et_login_contrasena);
+        login= findViewById(R.id.btn_login_login);
+        atras= findViewById(R.id.btn_login_atras);
+        olvide_contraseña= findViewById(R.id.tv_login_olvido);
+        registro= findViewById(R.id.btn_registro_login);
         email.addTextChangedListener(loginTextWatcher);
         contrasena.addTextChangedListener(loginTextWatcher);
+
 
         atras.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,6 +67,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
         login.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onClick(View view) {
                 iniciarSesion(email.getText().toString(), contrasena.getText().toString());
@@ -118,9 +123,9 @@ public class LoginActivity extends AppCompatActivity {
                             DocumentSnapshot document = task.getResult();
                             if (document.exists()) {
                                 Log.d("GetUserSata", "DocumentSnapshot data: " + document.getData());
-                                usuarioEmpres =document.toObject(UsuarioEmpres.class);
+                                usuarioEmpresa =document.toObject(UsuarioEmpresa.class);
                                 Intent i =new Intent(LoginActivity.this, HomeActivity.class);
-                                i.putExtra("user",usuarioEmpres);
+                                i.putExtra("user", usuarioEmpresa);
                                 startActivity(i);
 
                             } else {
@@ -132,7 +137,7 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 });
             } else {
-                usuarioEmpres= new UsuarioEmpres();
+                usuarioEmpresa = new UsuarioEmpresa();
                 Toast.makeText(LoginActivity.this, "Por favor da clic en el enlace que llego a tu correo para verificar la cuenta.", Toast.LENGTH_LONG).show();
             }
         }
@@ -141,9 +146,16 @@ public class LoginActivity extends AppCompatActivity {
         @Override
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
         }
+        @RequiresApi(api = Build.VERSION_CODES.M)
         @Override
         public void onTextChanged(CharSequence s, int start, int before, int count) {
-            login.setEnabled(!email.getText().toString().isEmpty()&&!contrasena.getText().toString().isEmpty());
+            if(!email.getText().toString().isEmpty()&&!contrasena.getText().toString().isEmpty()){
+                login.setEnabled(true);
+                login.setTextColor(getColor(R.color.btn_enabled));
+            }else{
+                login.setEnabled(false);
+                login.setTextColor(getColor(R.color.btn_disabled));}
+
         }
         @Override
         public void afterTextChanged(Editable s) {

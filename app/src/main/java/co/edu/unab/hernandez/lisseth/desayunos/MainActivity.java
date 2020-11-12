@@ -11,13 +11,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import co.edu.unab.hernandez.lisseth.desayunos.auth.LoginActivity;
-import co.edu.unab.hernandez.lisseth.desayunos.auth.RegisterActivity;
-import co.edu.unab.hernandez.lisseth.desayunos.pagesAdmin.HomeActivity;
 import co.edu.unab.hernandez.lisseth.desayunos.pagesConsumer.ListaProductos;
 
 public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
-    private Button btn_registro, btn_login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,14 +22,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
-        findViewById(R.id.btn_login).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.btn_login_main).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(i);
             }
         });
-        findViewById(R.id.btn_registro).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.btn_ver_desayunos_main).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, ListaProductos.class);
@@ -48,6 +45,4 @@ public class MainActivity extends AppCompatActivity {
         FirebaseUser currentUser = mAuth.getCurrentUser();
 
     }
-
-
 }

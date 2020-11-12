@@ -4,146 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo"
     tools:context=".auth.RegisterActivity">
 
-    <ImageButton
-        android:id="@+id/btn_select_photo"
-        android:layout_width="237dp"
-        android:layout_height="170dp"
-        android:backgroundTint="@android:color/transparent"
-        android:scaleType="centerInside"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.135"
-        app:srcCompat="@drawable/camera" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tv_titulo_registro"
         android:layout_width="185dp"
         android:layout_height="32dp"
         android:gravity="center"
-        android:text="Registro"
+        android:text="@string/tv_titulo_registro"
+        android:textColor="#F44336"
         android:textSize="24sp"
+        android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.047" />
-
-
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Agrega una foto dando clic en la imagen"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.557"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.328" />
-
-    <EditText
-        android:id="@+id/edit_nombre"
-        android:layout_width="338dp"
-        android:layout_height="59dp"
-        android:ems="10"
-        android:hint="@android:string/unknownName"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.401" />
-
-    <EditText
-        android:id="@+id/edit_email"
-        android:layout_width="338dp"
-        android:layout_height="59dp"
-        android:ems="10"
-        android:hint="@android:string/defaultVoiceMailAlphaTag"
-        android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/edit_telefono"
-        android:layout_width="338dp"
-        android:layout_height="59dp"
-        android:ems="10"
-        android:hint="@android:string/emptyPhoneNumber"
-        android:inputType="phone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.599" />
-
-    <EditText
-        android:id="@+id/edit_direccion"
-        android:layout_width="338dp"
-        android:layout_height="59dp"
-        android:ems="10"
-        android:hint="Addres"
-        android:inputType="textPostalAddress"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.697" />
-
-    <EditText
-        android:id="@+id/edit_descripcion"
-        android:layout_width="338dp"
-        android:layout_height="59dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:hint="Details"
-        android:inputType="textMultiLine"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.796" />
-
-    <Button
-        android:id="@+id/btn_registrar"
-        style="@style/Widget.AppCompat.Button.Borderless.Colored"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:drawableRight="@android:drawable/checkbox_on_background"
-        android:shadowColor="#00BCD4"
-        android:text="Registrarme"
-        android:enabled="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
-
-    <EditText
-        android:id="@+id/edit_password"
-        android:layout_width="338dp"
-        android:layout_height="59dp"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.883" />
+        app:layout_constraintVertical_bias="0.183" />
 
     <ImageButton
         android:id="@+id/btn_atras"
@@ -157,4 +35,187 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.036"
         app:srcCompat="@drawable/atras" />
+
+    <ScrollView
+        android:layout_width="406dp"
+        android:layout_height="545dp"
+        android:layout_marginTop="200dp"
+        android:clipToPadding="false"
+        android:fadeScrollbars="false"
+        android:foregroundGravity="center_vertical|center_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/btn_select_photo_registro"
+                android:layout_width="237dp"
+                android:layout_height="170dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="@android:color/transparent"
+                android:scaleType="centerInside"
+                app:layout_constraintVertical_bias="0.242"
+                app:srcCompat="@drawable/camera" />
+
+            <TextView
+                android:id="@+id/tv_desc_registro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:text="@string/tv_desc_registro"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/et_nombre_registro"
+                android:layout_width="338dp"
+                android:layout_height="59dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="#9FC6C1C1"
+                android:ems="10"
+                android:hint="@string/et_nombre_registro"
+                android:inputType="textPersonName"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/et_correo_registro"
+                android:layout_width="338dp"
+                android:layout_height="59dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:background="#9FC6C1C1"
+                android:ems="10"
+                android:hint="@string/et_correo_registro"
+                android:inputType="textEmailAddress"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/et_telefono_registro"
+                android:layout_width="338dp"
+                android:layout_height="59dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:background="#9FC6C1C1"
+                android:ems="10"
+                android:hint="@string/et_telefono_registro"
+                android:inputType="phone"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/et_direccion_registro"
+                android:layout_width="338dp"
+                android:layout_height="59dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:background="#9FC6C1C1"
+                android:ems="10"
+                android:hint="@string/et_direccion_registro"
+                android:inputType="textPostalAddress"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/et_descripcion_registro"
+                android:layout_width="338dp"
+                android:layout_height="59dp"
+                android:layout_gravity="center|center_vertical"
+                android:layout_margin="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:background="#9FC6C1C1"
+                android:ems="10"
+                android:gravity="center_vertical"
+                android:hint="@string/et_descripcion_registro"
+                android:inputType="textMultiLine"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/et_pass_registro"
+                android:layout_width="338dp"
+                android:layout_height="59dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:background="#9FC6C1C1"
+                android:ems="10"
+                android:hint="@string/et_pass_registro"
+                android:inputType="textPassword"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_registrar"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="10dp"
+                android:drawableRight="@android:drawable/checkbox_on_background"
+                android:enabled="false"
+                android:shadowColor="#3F51B5"
+                android:text="@string/btn_registro_registro"
+                android:textColor="#979696"
+                android:textColorHighlight="#FFFFFFFF"
+                android:textColorLink="#3F51B5"
+                android:textSize="24sp"
+                android:textStyle="bold|italic" />
+
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
