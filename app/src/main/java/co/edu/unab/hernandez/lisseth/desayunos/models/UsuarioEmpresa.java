@@ -8,6 +8,19 @@ public class UsuarioEmpresa implements Serializable {
     public UsuarioEmpresa() {
     }
 
+    public UsuarioEmpresa(String idUsuario, String nombre, String urlFoto, String descripcion, String telefono, String correo, String contrasena, String direccion, String latitud, String longitud) {
+        this.idUsuario = idUsuario;
+        this.nombre = nombre;
+        this.urlFoto = urlFoto;
+        this.descripcion = descripcion;
+        this.telefono = telefono;
+        this.correo = correo;
+        this.contrasena = contrasena;
+        this.direccion = direccion;
+        this.latitud = latitud;
+        this.longitud = longitud;
+    }
+
     public String getContrasena() {
         return contrasena;
     }

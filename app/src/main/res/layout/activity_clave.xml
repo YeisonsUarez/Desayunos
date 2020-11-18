@@ -23,11 +23,11 @@
         app:layout_constraintVertical_bias="0.181" />
 
     <Button
-        android:id="@+id/enviar_contrasena"
+        android:id="@+id/btn_enviar_clave"
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enviar"
+        android:text="@string/btn_enviar_clave"
         android:textColor="#FF979696"
         android:textSize="24sp"
         android:textStyle="bold|italic"

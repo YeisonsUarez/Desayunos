@@ -24,38 +24,38 @@ import co.edu.unab.hernandez.lisseth.desayunos.R;
 
 public class ClaveActivity extends AppCompatActivity {
 
-    private Button enviar;
-    private ImageButton atras;
-    private EditText email;
+    private Button btnEnviar;
+    private ImageButton ibAtras;
+    private EditText etCorreo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clave);
-        atras= findViewById(R.id.atras_contrasena);
-        enviar= findViewById(R.id.enviar_contrasena);
-        email= findViewById(R.id.et_correo_clave);
-        email.addTextChangedListener(loginTextWatcher);
-        atras.setOnClickListener(new View.OnClickListener() {
+        ibAtras = findViewById(R.id.atras_contrasena);
+        btnEnviar = findViewById(R.id.btn_enviar_clave);
+        etCorreo = findViewById(R.id.et_correo_clave);
+        etCorreo.addTextChangedListener(loginTextWatcher);
+        ibAtras.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(ClaveActivity.this, LoginActivity.class));
             }
         });
-        enviar.setOnClickListener(new View.OnClickListener() {
+        btnEnviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 FirebaseAuth auth = FirebaseAuth.getInstance();
                 auth.setLanguageCode("es");
-                auth.sendPasswordResetEmail(email.getText().toString())
+                auth.sendPasswordResetEmail(etCorreo.getText().toString())
                         .addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 if (task.isSuccessful()) {
-                                    Log.d("Contraseña", "Email sent.");
-                                    email.setText("");
+                                    Log.d("Contraseña", "Correo Enviado.");
+                                    etCorreo.setText("");
                                     Toast.makeText(ClaveActivity.this, "Email enviado", Toast.LENGTH_SHORT).show();
                                 }else{
-                                    Toast.makeText(ClaveActivity.this, "No se puede enviar el email", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(ClaveActivity.this, "No se puede enviar el correo", Toast.LENGTH_SHORT).show();
                                 }
 
                             }
@@ -73,12 +73,12 @@ public class ClaveActivity extends AppCompatActivity {
         @Override
         public void onTextChanged(CharSequence s, int start, int before, int count) {
 
-            if(!email.getText().toString().isEmpty()){
-                enviar.setEnabled(true);
-                enviar.setTextColor(getColor(R.color.btn_enabled));
+            if(!etCorreo.getText().toString().isEmpty()){
+                btnEnviar.setEnabled(true);
+                btnEnviar.setTextColor(getColor(R.color.btn_enabled));
             }else{
-                enviar.setEnabled(false);
-                enviar.setTextColor(getColor(R.color.btn_disabled));
+                btnEnviar.setEnabled(false);
+                btnEnviar.setTextColor(getColor(R.color.btn_disabled));
             }
         }
         @Override

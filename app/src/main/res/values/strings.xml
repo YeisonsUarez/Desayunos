@@ -22,4 +22,28 @@
     <string name="tv_titulo_clave">Restablecer contraseña</string>
     <string name="tv_desc_clave">Cuando hagas clic en enviar, te llegará un mensaje para restablecer tu contraseña.</string>
     <string name="et_correo_clave">Correo</string>
+    <string name="btn_enviar_clave">Enviar</string>
+    <string name="tv_titulo_home">Mi Perfil</string>
+    <string name="tv_texto_nombre_home">Nombre:</string>
+    <string name="tv_texto_correo_home">Correo:</string>
+    <string name="tv_texto_telefono_home">Número de Teléfono:</string>
+    <string name="tv_texto_direccion_home">Dirección:</string>
+    <string name="tv_texto_descripcion_home">Descripción:</string>
+    <string name="btn_editar_perfil_home">Editar</string>
+    <string name="btn_salir_perfil_home">Cerrar Sesión</string>
+    <string name="title_perfil_fragment">Perfil</string>
+    <string name="title_productos_fragment">Productos</string>
+    <string name="title_perfil_empresa_fragment">Empresa</string>
+    <string name="btn_guardar_perfil_home">Guardar</string>
+    <string name="btn_cancelar_perfil_home">Cancelar</string>
+    <string name="btn_salir_productos_home">Cerrar Sesión</string>
+    <string name="btn_agregar_productos_home">Agregar</string>
+    <string name="tv_titulo_dialogo">Mis Productos</string>
+    <string name="tv_texto_nombre_producto_dialogo">Nombre Producto:</string>
+    <string name="tv_texto_detalle_producto_dialogo">Detalle Producto:</string>
+    <string name="tv_texto_valor_producto_dialogo">Valor Producto:</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

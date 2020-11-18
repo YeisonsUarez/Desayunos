@@ -40,8 +40,8 @@ public class AdaptadorDesayunos extends RecyclerView.Adapter {
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View mivista= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_producto,parent,false);
-        return new ViewHolder(mivista);
+        View miVista= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_producto,parent,false);
+        return new ViewHolder(miVista);
     }
 
     @Override
@@ -68,8 +68,5 @@ public class AdaptadorDesayunos extends RecyclerView.Adapter {
     }
     public interface onItemClickListener{
         void onItemClick(Producto p, int posicion);
-
     }
-
-
 }

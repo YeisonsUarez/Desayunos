@@ -4,55 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo"
-    tools:context=".pagesAdmin.HomeActivity">
+    tools:context=".PerfilFragment">
 
-    <ImageButton
-        android:id="@+id/btn_atras_home"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@android:color/transparent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.045"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.036"
-        app:srcCompat="@drawable/atras" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="409dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.95">
-
-        <Button
-            android:id="@+id/btn_editar_perfil_home"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:background="#00FFFFFF"
-            android:text="@string/btn_editar_perfil_home"
-            android:textColor="#3F51B5"
-            android:textSize="24sp"
-            android:textStyle="bold|italic" />
-
-    </LinearLayout>
+    <!-- TODO: Update blank fragment layout -->
 
     <TextView
         android:id="@+id/tv_titulo_home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:text="@string/tv_titulo_home"
         android:textColor="#F44336"
         android:textSize="24sp"
@@ -64,31 +24,28 @@
         app:layout_constraintVertical_bias="0.18" />
 
     <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="409dp"
-        android:layout_height="400dp"
-        android:layout_marginTop="200dp"
+        android:id="@+id/scrollView3"
+        android:layout_width="0dp"
+        android:layout_height="450dp"
+        android:layout_marginTop="94dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.59">
 
         <LinearLayout
-            android:layout_width="409dp"
-            android:layout_height="200dp"
-            android:background="#FBEFE4E4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="250dp"
-                android:layout_height="250dp"
+                android:id="@+id/iv_home"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
                 android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                app:srcCompat="@drawable/camera" />
+                android:src="@drawable/camera" />
 
             <TextView
                 android:id="@+id/tv_texto_nombre_home"
@@ -105,18 +62,22 @@
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/tv_nombre_home"
+
+            <EditText
+                android:id="@+id/et_nombre_home"
                 android:layout_width="300dp"
-                android:layout_height="30dp"
+                android:layout_height="60dp"
                 android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
+                android:ems="10"
+                android:enabled="false"
+                android:inputType="textPersonName"
+                android:padding="10dp"
+                android:paddingStart="10dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="10dp"
                 android:textColor="#000000"
-                android:textSize="20sp" />
+                android:textColorHint="#000000" />
 
             <TextView
                 android:id="@+id/tv_texto_correo_home"
@@ -133,18 +94,21 @@
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
-            <TextView
+            <EditText
                 android:id="@+id/et_correo_home"
                 android:layout_width="300dp"
-                android:layout_height="30dp"
+                android:layout_height="60dp"
                 android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
+                android:ems="10"
+                android:enabled="false"
+                android:inputType="textPersonName"
+                android:padding="10dp"
+                android:paddingStart="10dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="10dp"
                 android:textColor="#000000"
-                android:textSize="20sp" />
+                android:textColorHint="#000000" />
 
             <TextView
                 android:id="@+id/tv_texto_telefono_home"
@@ -161,18 +125,21 @@
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
-            <TextView
+            <EditText
                 android:id="@+id/et_telefono_home"
                 android:layout_width="300dp"
-                android:layout_height="30dp"
+                android:layout_height="60dp"
                 android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
+                android:ems="10"
+                android:enabled="false"
+                android:inputType="textPersonName"
+                android:padding="10dp"
+                android:paddingStart="10dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="10dp"
                 android:textColor="#000000"
-                android:textSize="20sp" />
+                android:textColorHint="#000000" />
 
             <TextView
                 android:id="@+id/tv_texto_direccion_home"
@@ -189,18 +156,21 @@
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
-            <TextView
+            <EditText
                 android:id="@+id/et_direccion_home"
                 android:layout_width="300dp"
-                android:layout_height="30dp"
+                android:layout_height="60dp"
                 android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
+                android:ems="10"
+                android:enabled="false"
+                android:inputType="textPersonName"
+                android:padding="10dp"
+                android:paddingStart="10dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="10dp"
                 android:textColor="#000000"
-                android:textSize="20sp" />
+                android:textColorHint="#000000" />
 
             <TextView
                 android:id="@+id/tv_texto_descripcion_home"
@@ -218,20 +188,54 @@
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
-            <TextView
+            <EditText
                 android:id="@+id/et_descripcion_home"
                 android:layout_width="300dp"
-                android:layout_height="30dp"
+                android:layout_height="60dp"
                 android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
+                android:ems="10"
+                android:enabled="false"
+                android:inputType="textPersonName"
+                android:padding="10dp"
+                android:paddingStart="10dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="10dp"
                 android:textColor="#000000"
-                android:textSize="20sp" />
-
+                android:textColorHint="#000000" />
         </LinearLayout>
     </ScrollView>
 
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="74dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/btn_editar_perfil_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            android:text="@string/btn_editar_perfil_home"
+            android:textColor="#3F51B5"
+            android:textSize="24sp"
+            android:textStyle="bold|italic" />
+
+        <Button
+            android:id="@+id/btn_salir_perfil_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            android:text="@string/btn_salir_perfil_home"
+            android:textColor="#3F51B5"
+            android:textSize="24sp"
+            android:textStyle="bold|italic" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
